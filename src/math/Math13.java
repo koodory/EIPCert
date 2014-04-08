@@ -46,25 +46,26 @@ public class Math13 {
 
 	private static void transform(){
 		int i = 0;
-//		do{
-//			O[i] = 1 - B[i];
-//			i++;
-//		}while(i < N);
-//		i = N;
-//		C = 1;
-//		do{
-//			T[i] = 1;
-//			if(O[i] == C)
-//				T[i] = 0;
-//			C = O[i] * C;
-//			i = i -1;
-//		}while(i>0);
+		do{
+			O[i] = 1 - B[i];
+			i++;
+		}while(i < N);
+		i = N-1;
+		C = 1;
+		
+		do{
+			T[i] = 1;
+			if(O[i] == C)
+				T[i] = 0;
+			C = O[i] * C;
+			i = i -1;
+		}while(i>=0);
 	}
 
 	private static void showResult(){
 		System.out.print("2의보수 : ");
 		for(int i=0; i<N; i++){
-			System.out.print(B[i]);
+			System.out.print(T[i]);
 		}
 	}
 
@@ -75,7 +76,7 @@ public class Math13 {
 			transform();
 			showResult();
 		}catch(Exception e){
-			//			System.out.println(e.getMessage());
+			System.out.println(e.getMessage());
 		}
 	}
 }
